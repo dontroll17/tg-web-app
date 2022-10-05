@@ -2,6 +2,13 @@ export {};
 
 declare global {
     interface Window {
-        Telegram: any
+        Telegram: {
+            WebApp: {
+                ready: any
+                close: any,
+                initDataUnsafe: any,
+                MainButton: any
+            }
+        }
     }
 }
