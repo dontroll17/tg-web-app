@@ -8,19 +8,3 @@
 * {
   background-color: rgb(240, 241, 243);
 }
-
-body {
-  background-color: var(--tg-theme-bg-color);
-  color: var(--tg-theme-text-color);
-}
-
-button {
-  height: 2rem;
-  width: 4rem;
-  border-radius: 1rem;
-  background-color: aqua;
-}
-
-button:hover {
-  background-color: rgb(26, 231, 231);
-}
