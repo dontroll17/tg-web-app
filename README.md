@@ -1,6 +1,6 @@
 # Telegram web app
 
-vite + react
+vite + react web application for telegram bot
 
 ## Installation
 
