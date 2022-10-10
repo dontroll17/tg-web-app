@@ -4,7 +4,7 @@ import Button from '../Button/Button';
 import './Header.css';
 
 function Header() {
-    const { tg, user, onClose } = useTelegram();
+    const { user, onClose } = useTelegram();
 
     return (
         <div className={'header'}>
