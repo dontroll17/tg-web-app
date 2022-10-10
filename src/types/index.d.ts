@@ -7,7 +7,10 @@ declare global {
                 ready: any
                 close: any,
                 initDataUnsafe: any,
-                MainButton: any
+                MainButton: any,
+                sendData: any,
+                onEvent: any,
+                offEvent: any
             }
         }
     }
