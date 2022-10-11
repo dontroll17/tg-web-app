@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useTelegram } from '../../hooks/useTelegram';
 import Item from '../Item/Item';
 import './List.css';
@@ -13,6 +13,26 @@ const types = [
 function List() {
   const [ addedItems, setAddedItems ] = useState([]);
   const { tg } = useTelegram();
+
+  const onSendData = useCallback(() => {
+    const data = {
+      type: addedItems
+    }
+    fetch('http://localhost:3333', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data)
+    })
+  }, []);
+
+  useEffect(() => {
+    tg.onEvent('mainButtonClicked', onSendData)
+    return () => {
+      tg.offEvent('mainButtonClicked', onSendData)
+    }
+  }, [onSendData]);
 
   const onAdd = (type: any) => {
     const added = addedItems.find((item: any) => item.id === type.id);
